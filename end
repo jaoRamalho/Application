@@ -1,0 +1,17 @@
+[33mcommit 20bf879d85a5a0eaeae03535dba793ac2590fe04[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: jaoRamalho <joaoramalho@alunos.utfpr.edu.br>
+Date:   Fri Jul 12 14:34:30 2024 -0300
+
+    Adicionando .ignore e makefile e ignorando lib e include
+
+[33mcommit b97f6d59f5f580561ca2f228cb95a835dbcb4da4[m
+Author: jaoRamalho <joaoramalho@alunos.utfpr.edu.br>
+Date:   Fri Jul 12 14:30:46 2024 -0300
+
+    Adicionando .ignore e makefile
+
+[33mcommit a73b6ff94f4faad00e6b0ef47f2a08c2e44edeb9[m
+Author: jaoRamalho <joaoramalho@alunos.utfpr.edu.br>
+Date:   Wed Jul 10 20:12:16 2024 -0300
+
+    Iniciando projeto (Application adicionado)

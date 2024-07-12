@@ -2,3 +2,9 @@
 lib/
 
 include/
+
+*.o
+
+*.exe
+
+*.dll

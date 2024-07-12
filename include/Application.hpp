@@ -1,20 +1,23 @@
 #pragma once
 #include <QApplication>
 #include "State.hpp"
-#include <unordered_map>
+#include "StatesManager.hpp"
 #include <string>
 
+
+// Aplicativo -> classe singlenton que gerencia os estados e eventos do jogo
 class Application{
 private:
+    static Application* instance;
     QApplication* app;
-    std::unordered_map<std::string, State*> states;
-
-public:
     Application(int argc, char *argv[]);
+
+    StatesManager statesManager;
+    
+public:
     ~Application();
 
+    static Application* getInstance(int argc, char *argv[]);
     void run();
     void createStates();
-    void eventStates(std::string state);
-    void addState(std::string name, State* state);
 };

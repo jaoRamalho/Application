@@ -4,11 +4,6 @@
 Application::Application(int argc, char *argv[]){
     app = new QApplication(argc, argv);
     app->setApplicationName("Primeiro app");
-    
-    window.resize(550, 400);
-    window.setWindowTitle("Primeiro app");
-    window.show();
-
 }
 
 Application::~Application(){
@@ -19,4 +14,16 @@ Application::~Application(){
 void Application::run(){
     app->exec();
     
+}
+
+void Application::createStates(){
+
+}
+
+void Application::eventStates(std::string state){
+
+}
+
+void Application::addState(std::string name, State* state){
+
 }

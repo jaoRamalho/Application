@@ -31,4 +31,4 @@ link:
 
 # Limpar os arquivos .o e o executável
 clean:
-	rm -rf $(OBJ_DIR)/*.o bin/main
+	rm -rf obj/*.o bin/main

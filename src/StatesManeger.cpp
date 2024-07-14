@@ -17,6 +17,7 @@ void StatesManager::addState(std::string name, State* state){
 
 void StatesManager::changeState(std::string name){
     currentState = name;
+    states[currentState]->init();
 }
 
 State* StatesManager::getCurrentState(){

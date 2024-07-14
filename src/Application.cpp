@@ -2,9 +2,10 @@
 #include "Login.hpp"
 
 Application* Application::instance = nullptr;
-Application::Application(int argc, char *argv[]){
+Application::Application(int argc, char *argv[]) : styleSetting(StyleSetting::getInstance()){
     app = new QApplication(argc, argv);
     app->setApplicationName("Primeiro app");
+    app->setStyleSheet(styleSetting->getStyle("dark"));
     createStates();
     statesManager.changeState("login");
 }

@@ -1,0 +1,47 @@
+QMainWindow {
+    background-color: #2E2E2E;
+    color: #FFFFFF;
+}
+
+QWidget {
+    background-color: #2E2E2E;
+    color: #FFFFFF;
+}
+
+QMenuBar {
+    background-color: #2E2E2E;
+    color: #FFFFFF;
+}
+
+QMenu {
+    background-color: #2E2E2E;
+    color: #FFFFFF;
+}
+
+QMenu::item:selected {
+    background-color: #3E3E3E;
+}
+
+QToolBar {
+    background-color: #2E2E2E;
+    color: #FFFFFF;
+}
+
+QStatusBar {
+    background-color: #2E2E2E;
+    color: #FFFFFF;
+}
+
+QPushButton {
+    background-color: #4E4E4E;
+    color: #FFFFFF;
+}
+
+QPushButton:hover {
+    background-color: #5E5E5E;
+}
+
+QLineEdit {
+    background-color: #4E4E4E;
+    color: #FFFFFF;
+}

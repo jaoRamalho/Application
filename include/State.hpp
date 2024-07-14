@@ -1,13 +1,15 @@
 #pragma once
 #include <QWidget>
-#include <QPushButton>
+#include <QLineEdit>
 
 class State{
 protected:
+    const int WIDTH;
+    const int HEIGHT;
     QWidget window;
 
 public:
-    State();
+    State(const int width, const int height);
     virtual ~State();
 
     virtual void init();

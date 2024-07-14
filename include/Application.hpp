@@ -1,7 +1,9 @@
 #pragma once
+
 #include <QApplication>
-#include "StatesManager.hpp"
 #include <string>
+
+#include "StatesManager.hpp"
 #include "StyleSetting.hpp"
 
 // Aplicativo -> classe singlenton que gerencia os estados e eventos do jogo
@@ -20,4 +22,7 @@ public:
     static Application* getInstance(int argc, char *argv[]);
     void run();
     void createStates();
+    static void changeThema(std::string thema);
+    static void changeState(std::string state);
+    static std::string getThema();
 };

@@ -76,7 +76,6 @@
         "cinttypes": "cpp",
         "typeinfo": "cpp",
         "valarray": "cpp",
-        "variant": "cpp",
-        "qwidget": "cpp"
+        "variant": "cpp"
     }
 }

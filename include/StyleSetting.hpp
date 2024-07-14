@@ -6,14 +6,14 @@
 
 class StyleSetting{
 private:
-    static StyleSetting* instance;
     std::unordered_map<std::string, std::string> styleMap;
-
-    StyleSetting();
+    std::string thema;
 
 public:
+    StyleSetting();
     ~StyleSetting();
 
     static StyleSetting* getInstance();
     QString getStyle(std::string styleName);
+    std::string getThema();
 };

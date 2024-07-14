@@ -7,6 +7,7 @@ class Login : public State{
 private:
     QPushButton login;
     QPushButton registerr;
+    QPushButton changeThema;
     QLineEdit usernameField;
 
 public:
@@ -16,4 +17,5 @@ public:
     void createLoginButton();
     void createRegisterButton();
     void createUsernameField();
+    void createChangeThemaButton();
 };

@@ -1,12 +1,15 @@
 #pragma once
 #include <QWidget>
 #include <QLineEdit>
+#include "TitleBar.hpp"
+
 
 class State{
 protected:
     const int WIDTH;
     const int HEIGHT;
     QWidget window;
+    TitleBar* titleBar;
 
 public:
     State(const int width, const int height);

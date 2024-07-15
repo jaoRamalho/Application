@@ -3,6 +3,8 @@ lib/
 
 Qt/include/
 
+MySQL/include/
+
 *.o
 
 *.exe

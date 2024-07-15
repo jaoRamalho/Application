@@ -2,13 +2,13 @@
 #include "State.hpp"
 #include <QPushButton>
 
-
 class Login : public State{
 private:
-    QPushButton login;
-    QPushButton registerr;
-    QPushButton changeThema;
+    QPushButton loginButton;
+    QPushButton registerButton;
+    
     QLineEdit usernameField;
+    QLineEdit passwordField;
 
 public:
     Login();
@@ -16,6 +16,7 @@ public:
 
     void createLoginButton();
     void createRegisterButton();
+    
     void createUsernameField();
-    void createChangeThemaButton();
+    void createPasswordField();
 };

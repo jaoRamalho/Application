@@ -45,3 +45,9 @@ QLineEdit {
     background-color: #E0E0E0;
     color: #000000;
 }
+
+#themaSettings:checked {
+    background-color: #4CAF50; /* Cor de fundo verde para indicar que está ativo */
+    color: #FFFFFF; /* Cor do texto */
+    border: none; /* Remover borda */
+}

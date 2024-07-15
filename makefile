@@ -19,15 +19,16 @@ $(OBJ_DIR)/%.o: src/%.cpp
 	-IQt/include/QtNetwork \
 	-IQt/include/QtSql \
 	-IQt/include/QtXml \
-	-IQt/include/QtMultimedia
+	-IQt/include/QtMultimedia \
+	-IMySQL/include \
 
 # Regra padrão para construir o executável
-all: compile link
+all: clean compile link
 
 compile: $(OBJ_FILES)
 
 link:
-	g++ $(OBJ_FILES) -o bin/main -LQt/lib -lQt6Core -lQt6Gui -lQt6Widgets -lQt6Network -lQt6Sql -lQt6Xml
+	g++ $(OBJ_FILES) -o bin/main -LQt/lib -LMySQL/lib -lQt6Core -lQt6Gui -lQt6Widgets -lQt6Network -lQt6Sql -lQt6Xml -lmysql
 
 # Limpar os arquivos .o e o executável
 clean:

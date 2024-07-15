@@ -4,51 +4,45 @@
 
 Login::Login() : State(500, 350){
     window.setWindowTitle("Login");
+    
     createLoginButton();
     createRegisterButton();
     createUsernameField();
-    createChangeThemaButton();
+    createPasswordField();
 }
-
+ 
 Login::~Login(){
     
 }
 
-void Login::createLoginButton(){
-    login.setText("Login");
-    login.setGeometry(WIDTH/2 - 50, HEIGHT/2, 100, 30);
-    login.setParent(&window);
-    window.connect(&login, &QPushButton::clicked, [this](){
-        std::cout << "Username: " << this->usernameField.text().toStdString() << std::endl;
-    });
-    login.show();
+void Login::createPasswordField(){
+    passwordField.setParent(&window);
+    passwordField.setPlaceholderText("Password");
+    passwordField.setEchoMode(QLineEdit::Password);
+    passwordField.setGeometry(WIDTH/2 - 100, HEIGHT/2 - 45, 200, 30); 
+    passwordField.show();
 }
 
-void Login::createChangeThemaButton(){
-    changeThema.setText("X");
-    changeThema.setGeometry(5, 5, 15, 15);
-    changeThema.setParent(&window);
-    
-    window.connect(&changeThema, &QPushButton::clicked, [](){
-        if(Application::getThema() == "light")
-            Application::changeThema("dark");
-        else
-            Application::changeThema("light");
+void Login::createLoginButton(){
+    loginButton.setText("Login");
+    loginButton.setGeometry(WIDTH/2 - 50, HEIGHT/2, 100, 30);
+    loginButton.setParent(&window);
+    window.connect(&loginButton, &QPushButton::clicked, [this](){
+        std::cout << "Username: " << this->usernameField.text().toStdString() << std::endl;
     });
-    
-    changeThema.show();
+    loginButton.show();
 }
 
 void Login::createRegisterButton(){
-    registerr.setText("Register");
-    registerr.setGeometry(WIDTH/2 - 50, HEIGHT/2 + 50, 100, 30);
-    registerr.setParent(&window);
-    registerr.show();
+    registerButton.setText("Register");
+    registerButton.setGeometry(WIDTH/2 - 50, HEIGHT/2 + 50, 100, 30);
+    registerButton.setParent(&window);
+    registerButton.show();
 }
 
 void Login::createUsernameField(){
     usernameField.setParent(&window);
     usernameField.setPlaceholderText("Username");
-    usernameField.setGeometry(WIDTH/2 - 100, HEIGHT/2 - 45, 200, 30); 
+    usernameField.setGeometry(WIDTH/2 - 100, HEIGHT/2 - 90, 200, 30); 
     usernameField.show();
 }

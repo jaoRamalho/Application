@@ -1,20 +1,20 @@
 QMainWindow {
-    background-color: #2E2E2E;
+    background-color: #212121;
     color: #FFFFFF;
 }
 
 QWidget {
-    background-color: #2E2E2E;
+    background-color: #212121;
     color: #FFFFFF;
 }
 
 QMenuBar {
-    background-color: #2E2E2E;
+    background-color: #212121;
     color: #FFFFFF;
 }
 
 QMenu {
-    background-color: #2E2E2E;
+    background-color: #212121;
     color: #FFFFFF;
 }
 
@@ -23,25 +23,26 @@ QMenu::item:selected {
 }
 
 QToolBar {
-    background-color: #2E2E2E;
+    background-color: #212121;
     color: #FFFFFF;
 }
 
 QStatusBar {
-    background-color: #2E2E2E;
+    background-color: #212121;
     color: #FFFFFF;
 }
 
 QPushButton {
-    background-color: #4E4E4E;
+    background-color: #212121;
     color: #FFFFFF;
 }
 
 QPushButton:hover {
-    background-color: #5E5E5E;
+    background-color: #505050;
 }
 
 QLineEdit {
-    background-color: #4E4E4E;
-    color: #FFFFFF;
+    background-color: #353434;
+    color: #ffffff;
+    border: 0.5px solid #595959;
 }

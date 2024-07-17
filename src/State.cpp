@@ -1,15 +1,15 @@
 #include "State.hpp"
 
-State::State(const int width, const int height) : HEIGHT(height), WIDTH(width){
-    window.resize(WIDTH, HEIGHT);
-    titleBar = new TitleBar(&window, false);
+State::State(QWidget* parent, const int WIDTH, const int HEIGHT) : QWidget(parent){
+    resize(WIDTH, HEIGHT);
+    titleBar = new TitleBar(this, false);
 }
 
 State::~State(){
 }
 
 void State::init(){
-    window.show();
+    show();
 }
 
 void State::update(){

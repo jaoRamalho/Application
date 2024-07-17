@@ -2,8 +2,10 @@
 lib/
 
 Qt/include/
+Qt/lib/
 
 MySQL/include/
+MySQL/lib/
 
 *.o
 

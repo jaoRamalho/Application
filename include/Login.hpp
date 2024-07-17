@@ -10,13 +10,13 @@ private:
     QLineEdit usernameField;
     QLineEdit passwordField;
 
+    
+    void createLoginButton();
+    void createRegisterButton();
+    void createUsernameField();
+    void createPasswordField();
+
 public:
     Login();
     ~Login();
-
-    void createLoginButton();
-    void createRegisterButton();
-    
-    void createUsernameField();
-    void createPasswordField();
 };

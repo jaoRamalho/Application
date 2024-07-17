@@ -3,21 +3,22 @@
 #include <QPushButton>
 #include <QPainter>
 
-class TitleBar{
+class TitleBar : public QWidget{
 private:
     QPushButton exitButton;
     QPushButton minimizeButton;
     QPushButton resizeButton;
     QPushButton themaButton;
-    bool resize;
+    bool changeResize;
     QWidget* window;
 
 public:
-    TitleBar(QWidget* window, bool resize);
+    TitleBar(QWidget* parent, bool resize);
     ~TitleBar();
 
     void createButtonExit();
     void createButtonMinimize();
     void createButtonResize();
     void createButtonThema();
+    void createTitleBar();
 };

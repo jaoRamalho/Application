@@ -46,3 +46,7 @@ QLineEdit {
     color: #ffffff;
     border: 0.5px solid #595959;
 }
+
+#TitleBar {
+    background-color: #000000;
+}

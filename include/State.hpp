@@ -4,15 +4,12 @@
 #include "TitleBar.hpp"
 
 
-class State{
+class State : public QWidget{
 protected:
-    const int WIDTH;
-    const int HEIGHT;
-    QWidget window;
     TitleBar* titleBar;
 
 public:
-    State(const int width, const int height);
+    State(QWidget* parent, const int WIDTH, const int HEIGHT);
     virtual ~State();
 
     virtual void init();

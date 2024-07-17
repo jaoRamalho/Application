@@ -1,11 +1,13 @@
 #include "Application.hpp"
 #include "Login.hpp"
+#include "DataBase.hpp"
 
 Application* Application::instance = nullptr;
 Application::Application(int argc, char *argv[]) : styleSetting(new StyleSetting()){
     app = new QApplication(argc, argv);
     app->setApplicationName("Primeiro app");
     app->setStyleSheet(styleSetting->getStyle("dark"));
+    DataBase* d = DataBase::getInstance();
     createStates();
     statesManager.changeState("login");
 }

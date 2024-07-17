@@ -1,12 +1,13 @@
 #include "TitleBar.hpp"
 #include "Application.hpp"
 
-TitleBar::TitleBar(QWidget* window,  bool resize=false) : window(window), resize(resize){
-    window = window;
-    if (resize)
+TitleBar::TitleBar(QWidget* parent,  bool resize=false) : QWidget(parent), window(parent), changeResize(resize){
+    if (changeResize)
         createButtonResize();
-
-    window->setWindowFlags(Qt::FramelessWindowHint);
+    
+    this->setObjectName("TitleBar");
+    parent->setWindowFlags(Qt::FramelessWindowHint);
+    createTitleBar();
     createButtonExit();
     createButtonMinimize();
     createButtonThema();
@@ -16,10 +17,15 @@ TitleBar::~TitleBar(){
 
 }
 
+void TitleBar::createTitleBar(){
+    setGeometry(0, 0, window->width(), 25);
+}
+
+
 void TitleBar::createButtonResize(){
     resizeButton.setText("[]");
-    resizeButton.setGeometry(window->width() - 50, 0, 25, 25);
-    resizeButton.setParent(window);
+    resizeButton.setParent(this);
+    resizeButton.setGeometry(width() - 50, 0, 25, 25);
     window->connect(&resizeButton, &QPushButton::clicked, [this](){
         if (window->isMaximized())
             window->showNormal();
@@ -31,8 +37,8 @@ void TitleBar::createButtonResize(){
 
 void TitleBar::createButtonThema(){
     themaButton.setText("T");
-    themaButton.setGeometry(window->width() -  ((!resize)? 75 : 90), 0, 25, 25);
-    themaButton.setParent(window);
+    themaButton.setParent(this);
+    themaButton.setGeometry(width()/2 - 12.5, 0, 25, 25);
     window->connect(&themaButton, &QPushButton::clicked, [this](){
         (Application::getThema() == "light") ?
             Application::changeThema("dark") : Application::changeThema("light");
@@ -42,8 +48,8 @@ void TitleBar::createButtonThema(){
 
 void TitleBar::createButtonExit(){
     exitButton.setText("X");
-    exitButton.setGeometry(window->width() - 25, 0, 25, 25);
-    exitButton.setParent(window);
+    exitButton.setParent(this);
+    exitButton.setGeometry(width() - 25, 0, 25, 25);
     window->connect(&exitButton, &QPushButton::clicked, [this](){
         window->close();
     });
@@ -52,8 +58,8 @@ void TitleBar::createButtonExit(){
 
 void TitleBar::createButtonMinimize(){
     minimizeButton.setText("=");
-    minimizeButton.setGeometry(window->width() - ((!resize)? 50 : 75), 0, 25, 25);
-    minimizeButton.setParent(window);
+    minimizeButton.setParent(this);
+    minimizeButton.setGeometry(width() - ((!changeResize)? 50 : 75), 0, 25, 25);
     window->connect(&minimizeButton, &QPushButton::clicked, [this](){
         window->showMinimized();
     });

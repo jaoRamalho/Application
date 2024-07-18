@@ -12,12 +12,12 @@ private:
     QLineEdit confirmPasswordField;
     QPushButton registerButton;
 
-public:
-    Register(QWidget* parent);
-
     void createNameField();
     void createUsernameField();
     void createPasswordField();
     void createConfirmPasswordField();
     void createRegisterButton();
+    
+public:
+    Register(QWidget* parent);
 };

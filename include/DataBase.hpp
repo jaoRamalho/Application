@@ -3,6 +3,7 @@
 #include <string>
 #include <nlohmann/json.hpp>
 
+// Enum de erros possiveis ao registrar um novo usuario e fazer login
 enum RegisterError{
     EMPTY_NAME,
     EMPTY_USERNAME,
@@ -13,6 +14,8 @@ enum RegisterError{
     SUCCESS    
 };
 
+
+// Classe para manipular o banco de dados de usuarios (o json de usuarios registrados)
 class DataBase{
 private:
     static std::string pathLogins;

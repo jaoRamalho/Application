@@ -4,6 +4,8 @@
 #include <QString>
 #include <unordered_map>
 
+
+// classe para controlar as configurcoes de exibicao (style)
 class StyleSetting{
 private:
     std::unordered_map<std::string, std::string> styleMap;

@@ -101,6 +101,8 @@ RegisterError DataBase::newUser(std::string name, std::string username, std::str
 }
 
 std::string DataBase::messageError(RegisterError erro){
+    //mensagens para ser exibida ao usuario por diferentes erros
+    
     switch (erro){
         case RegisterError::EMPTY_NAME :
             return "Empty name field";

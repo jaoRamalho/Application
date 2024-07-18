@@ -1,8 +1,9 @@
 #pragma once
 #include <QWidget>
 #include <QPushButton>
-#include <QPainter>
 
+
+// classe para representar a barra de titulo de states
 class TitleBar : public QWidget{
 private:
     QPushButton exitButton;

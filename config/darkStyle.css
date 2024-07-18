@@ -40,6 +40,22 @@ QLineEdit {
 }
 
 #Error {
-    background-color: #000000;
-    color: #ff0000;
+    background-color: #bd3535;
+    color: #ffffff;
+}
+
+#Error QPushButton {
+    background-color: #bd3535;
+    color: #ffffff;
+    border: none;
+}
+
+#Error QPushButton:hover {
+    background-color: #641717;
+    color: #FFFFFF;
+}
+
+#Error QLabel {
+    color: #ffffff;
+    background-color: #bd3535;
 }

@@ -8,10 +8,10 @@
 class Error : public QWidget{
 private:
     QLabel errorLabel;
-    QPushButton errorButton;
+    QPushButton exitButton;
 
     void createErrorLabel(std::string message);
-    void createErrorButton();
+    void createExitButton();
     void createErrorWindow();
 
 public:

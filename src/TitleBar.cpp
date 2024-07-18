@@ -2,8 +2,13 @@
 #include "Application.hpp"
 
 TitleBar::TitleBar(QWidget* parent) : QWidget(parent), window(parent), changeResize(false){
+    
     this->setObjectName("TitleBar");
+    
+    //setando a flag para a janela nao ter borda
     parent->setWindowFlags(Qt::FramelessWindowHint);
+    
+    //setando a flag para o qwidget ser deletado ao fechar
     this->setAttribute(Qt::WA_DeleteOnClose);
 }
 

@@ -8,7 +8,7 @@ Register::Register(QWidget* parent = nullptr) : State(parent){
     float w = parent->width();
     float h = parent->height();
     setGeometry(w*0.1, 35, 0.8*w, 0.8*h); // 20% da tela do pai (login)
-    titleBar = new TitleBar(this, false, false);
+    titleBar = TitleBar::createTitleBarCustomized(this, false, false, false, true, false, false);
 
     createNameField();
     createUsernameField();

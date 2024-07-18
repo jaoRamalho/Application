@@ -5,6 +5,18 @@
             "password": "admin",
             "role": "admin",
             "username": "admin"
+        },
+        {
+            "name": "joao",
+            "password": "jjpprr97531",
+            "role": "user",
+            "username": "jjpprr97531"
+        },
+        {
+            "name": "joom",
+            "password": "000",
+            "role": "user",
+            "username": "jj"
         }
     ]
 }

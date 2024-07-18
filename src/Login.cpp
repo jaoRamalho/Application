@@ -1,20 +1,21 @@
 #include "Login.hpp"
-#include "Application.hpp"
 #include <iostream>
 #include "DataBase.hpp"
 #include "Error.hpp"
 #include "Register.hpp"
+#include "Home.hpp"
+
 
 Login::Login() : State(nullptr){
     resize(400, 300);
-    titleBar = new TitleBar(this, true, false);
-
+    titleBar = TitleBar::createTitleBarCustomized(this, true, false, true, true, false, true);
     setWindowTitle("Login");
     
     createLoginButton();
     createRegisterButton();
     createUsernameField();
     createPasswordField();
+    show();
 }
  
 Login::~Login(){
@@ -38,7 +39,14 @@ void Login::createLoginButton(){
         std::string password = passwordField.text().toStdString();
         RegisterError error = DataBase::checkLoginDataBase(username, password);
         std::string message = DataBase::messageError(error);
-        Error* messageWindow = new Error(this, message);
+        
+        if (error == RegisterError::SUCCESS){
+            Home* home = new Home(nullptr, username);
+            this->close();
+        }
+        else{
+            Error* messageWindow = new Error(this, message);
+        }
     });
     loginButton.show();
 }

@@ -5,15 +5,3 @@ State::State(QWidget* parent) : QWidget(parent){
     this->setAttribute(Qt::WA_DeleteOnClose);
 
 }
-
-void State::init(){
-    show();
-}
-
-void State::update(){
-
-}
-
-void State::render(){
-    
-}

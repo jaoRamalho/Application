@@ -10,8 +10,4 @@ protected:
 
 public:
     State(QWidget* parent);
-
-    virtual void init();
-    virtual void update();
-    virtual void render();
 };

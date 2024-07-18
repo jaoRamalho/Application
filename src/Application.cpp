@@ -9,16 +9,12 @@ Application::Application(int argc, char *argv[]) : styleSetting(new StyleSetting
     app->setStyleSheet(styleSetting->getStyle("dark"));
     DataBase* d = DataBase::getInstance();
     createStates();
-    statesManager.changeState("login");
+  
 }
 
 Application::~Application(){
     delete app;
     delete styleSetting;
-}
-
-void Application::changeState(std::string state){
-    instance->statesManager.changeState(state);
 }
 
 Application* Application::getInstance(int argc, char *argv[]){
@@ -33,7 +29,7 @@ void Application::run(){
 }
 
 void Application::createStates(){
-    statesManager.addState("login", new Login());
+    Login* login = new Login();
 }
 
 std::string Application::getThema(){

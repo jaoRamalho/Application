@@ -5,8 +5,7 @@
             "includePath": [
                 "${default}", 
                 "${workspaceFolder}/Qt/include",
-                "${workspaceFolder}/include",
-                "${workspaceFolder}/MySQL/include"
+                "${workspaceFolder}/include"
             ],
             "defines": [
                 "_DEBUG",

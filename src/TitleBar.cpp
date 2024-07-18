@@ -1,22 +1,10 @@
 #include "TitleBar.hpp"
 #include "Application.hpp"
 
-TitleBar::TitleBar(QWidget* parent, bool minimize,  bool resize=false) : QWidget(parent), window(parent), changeResize(resize){
-    if (changeResize)
-        createButtonResize();
-    
+TitleBar::TitleBar(QWidget* parent) : QWidget(parent), window(parent), changeResize(false){
     this->setObjectName("TitleBar");
     parent->setWindowFlags(Qt::FramelessWindowHint);
     this->setAttribute(Qt::WA_DeleteOnClose);
-
-    createTitleBar();
-    createButtonExit();
-    if(minimize) { createButtonMinimize(); }
-    createButtonThema();
-}
-
-TitleBar::~TitleBar(){
-
 }
 
 void TitleBar::createTitleBar(){
@@ -66,4 +54,18 @@ void TitleBar::createButtonMinimize(){
         window->showMinimized();
     });
     minimizeButton.show();
+}
+
+TitleBar* TitleBar::createTitleBarCustomized(QWidget* parent, bool minimize, bool resize, bool thema, bool exit, 
+                                    bool title, bool icon)
+{
+    TitleBar* titleBar = new TitleBar(parent);
+    titleBar-> setGeometry(0, 0, parent->width(), 30);
+    titleBar->changeResize = resize;
+    if (thema) { titleBar->createButtonThema(); }
+    if (exit) { titleBar->createButtonExit(); }
+    if(minimize) { titleBar->createButtonMinimize(); }
+    if(resize) { titleBar->createButtonResize(); }
+    if (icon) { }//titleBar->createButtonIcon(); }
+    return titleBar;
 }

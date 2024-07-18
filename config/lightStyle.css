@@ -1,35 +1,6 @@
-QMainWindow {
-    background-color: #ffffff;
-    color: #FFFFFF;
-}
-
 QWidget {
     background-color: #ffffff;
-    color: #FFFFFF;
-}
-
-QMenuBar {
-    background-color: #ffffff;
-    color: #FFFFFF;
-}
-
-QMenu {
-    background-color: #ffffff;
-    color: #FFFFFF;
-}
-
-QMenu::item:selected {
-    background-color: #a5a1a1;
-}
-
-QToolBar {
-    background-color: #ffffff;
-    color: #FFFFFF;
-}
-
-QStatusBar {
-    background-color: #ffffff;
-    color: #FFFFFF;
+    color: #000000;
 }
 
 QPushButton {
@@ -44,8 +15,24 @@ QPushButton:hover {
 QLineEdit {
     background-color: #E0E0E0;
     color: #000000;
+    border: 0.5px solid #595959;
 }
 
 #TitleBar {
     background-color: #646363;
+}
+
+#TitleBar QPushButton {
+    background-color: #646363;
+    color: #000000;
+    border: none;
+}
+
+#TitleBar QPushButton:hover {
+    background-color: #33385a;
+}
+
+#Error {
+    background-color: #646363;
+    color: #ff0000;
 }

@@ -1,4 +1,10 @@
 {
-    "jjpprr97531": "jjpprr97531",
-    "joao": "123"
+    "users": [
+        {
+            "name": "admin",
+            "password": "admin",
+            "role": "admin",
+            "username": "admin"
+        }
+    ]
 }

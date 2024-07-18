@@ -1,11 +1,9 @@
 #include "State.hpp"
 
-State::State(QWidget* parent, const int WIDTH, const int HEIGHT) : QWidget(parent){
-    resize(WIDTH, HEIGHT);
-    titleBar = new TitleBar(this, false);
-}
+State::State(QWidget* parent) : QWidget(parent){
+    setObjectName("State");
+    this->setAttribute(Qt::WA_DeleteOnClose);
 
-State::~State(){
 }
 
 void State::init(){

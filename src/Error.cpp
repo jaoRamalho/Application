@@ -11,14 +11,15 @@ void Error::createErrorLabel(std::string message){
     errorLabel.setText(QString::fromStdString(message));
     errorLabel.setWordWrap(true);
     errorLabel.setParent(this);
-    errorLabel.setGeometry(10, 5, 80, 40);
+    errorLabel.setAlignment(Qt::AlignCenter); // Centraliza o texto
+    errorLabel.setGeometry(10, 10, width() - 20, height() / 2 + 20);
     errorLabel.show();
 }
 
 void Error::createErrorButton(){
     errorButton.setText("Continue");
     errorButton.setParent(this);
-    errorButton.setGeometry(30, 50, 40, 20);
+    errorButton.setGeometry(width()/2 - 30, height() - 37, 60, 30);
     this->connect(&errorButton, &QPushButton::clicked, [this](){
         this->close();
         this->setAttribute(Qt::WA_DeleteOnClose);
@@ -27,8 +28,9 @@ void Error::createErrorButton(){
 }
 
 void Error::createErrorWindow(){
+    setObjectName("Error");
     setWindowFlag(Qt::FramelessWindowHint);
-    setGeometry(0, 0, 100, 80);
+    setGeometry(parentWidget()->width() / 2 - 100, parentWidget()->height()/2 - 75, 200, 150);
     show();
 
 }

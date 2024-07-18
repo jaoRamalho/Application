@@ -1,3 +1,5 @@
+# Retirei o MySQL da compilação, pois não estou utilizando no momento.
+
 # Diretório de destino para os arquivos .o
 OBJ_DIR = obj
 
@@ -20,15 +22,16 @@ $(OBJ_DIR)/%.o: src/%.cpp
 	-IQt/include/QtSql \
 	-IQt/include/QtXml \
 	-IQt/include/QtMultimedia \
-	-IMySQL/include \
+
+# -IMySQL/include \
 
 # Regra padrão para construir o executável
-all: clean compile link
+all: compile link
 
 compile: $(OBJ_FILES)
 
 link:
-	g++ $(OBJ_FILES) -o bin/main -LQt/lib -LMySQL/lib -lQt6Core -lQt6Gui -lQt6Widgets -lQt6Network -lQt6Sql -lQt6Xml -lmysql
+	g++ $(OBJ_FILES) -o bin/main -LQt/lib -lQt6Core -lQt6Gui -lQt6Widgets -lQt6Network -lQt6Sql -lQt6Xml 
 
 # Limpar os arquivos .o e o executável
 clean:

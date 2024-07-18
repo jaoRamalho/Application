@@ -9,8 +9,7 @@ protected:
     TitleBar* titleBar;
 
 public:
-    State(QWidget* parent, const int WIDTH, const int HEIGHT);
-    virtual ~State();
+    State(QWidget* parent);
 
     virtual void init();
     virtual void update();

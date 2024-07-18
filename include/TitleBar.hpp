@@ -13,7 +13,7 @@ private:
     QWidget* window;
 
 public:
-    TitleBar(QWidget* parent, bool resize);
+    TitleBar(QWidget* parent, bool minimize, bool resize);
     ~TitleBar();
 
     void createButtonExit();

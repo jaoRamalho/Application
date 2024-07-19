@@ -32,12 +32,15 @@ QLineEdit {
     background-color: #000000;
     color: #FFFFFF;
     border: none;
+    text-align: center;
 }
+
 
 #TitleBar QPushButton:hover {
     background-color: #641717;
     color: #FFFFFF;
 }
+
 
 #Error {
     background-color: #bd3535;
@@ -58,4 +61,19 @@ QLineEdit {
 #Error QLabel {
     color: #ffffff;
     background-color: #bd3535;
+}
+
+
+#icon{
+    background-color: #000000;
+    color: #FFFFFF;
+    border: none;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+#icon:hover {
+    background-color: #000000; /* Mantém a cor de fundo original */
+    color: #FFFFFF; /* Mantém a cor do texto original */
+    border: none;
 }

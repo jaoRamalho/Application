@@ -106,22 +106,16 @@ std::string DataBase::messageError(RegisterError erro){
     switch (erro){
         case RegisterError::EMPTY_NAME :
             return "Empty name field";
-            break;
         case RegisterError::EMPTY_USERNAME :
             return "Empty username field";
-            break;
         case RegisterError::EMPTY_PASSWORD :
             return "Empty password field";
-            break;
         case RegisterError::PASSWORD_NOT_MATCH:
             return "Password not match";
-            break;
         case RegisterError::USERNAME_ALREADY_EXISTS :
             return "Username alredy exists";
-            break;
         case RegisterError::USER_NOT_EXIST :
             return "User does not exist";
-            break;
         default :
             return "SUCCESS";
     };

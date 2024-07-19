@@ -5,6 +5,7 @@ Error::Error(QWidget* parent, std::string message) : QWidget(parent){
     createErrorWindow();
     createErrorLabel(message);
     createExitButton();
+    createTimer();
 }
 
 void Error::createErrorLabel(std::string message){
@@ -33,4 +34,14 @@ void Error::createErrorWindow(){
     setGeometry(parentWidget()->width() / 2 - 75, parentWidget()->height()/2 - 115, 150, 50);
     show();
 
+}
+
+void Error::createTimer(){
+    timer.setParent(this);
+    timer.setSingleShot(true);
+    connect(&timer, &QTimer::timeout, [this](){
+        this->close();
+        this->setAttribute(Qt::WA_DeleteOnClose);
+    });
+    timer.start(2000);
 }

@@ -1,5 +1,6 @@
 #include "TitleBar.hpp"
 #include "Application.hpp"
+#include <iostream>
 
 TitleBar::TitleBar(QWidget* parent) : QWidget(parent), window(parent), changeResize(false){
     
@@ -22,10 +23,13 @@ void TitleBar::createButtonResize(){
     resizeButton.setParent(this);
     resizeButton.setGeometry(width() - 2*height(), 0, height(), height());
     window->connect(&resizeButton, &QPushButton::clicked, [this](){
-        if (window->isMaximized())
-            window->showNormal();
-        else
-            window->showMaximized();
+        if (window->isFullScreen()){
+            window->setGeometry(240, 60, 600, 400);
+            window->show();
+        } else{
+            window->showFullScreen();
+        }
+        resized();
     });
     resizeButton.show();
 }
@@ -39,6 +43,18 @@ void TitleBar::createButtonThema(){
             Application::changeThema("dark") : Application::changeThema("light");
     });
     themaButton.show();
+}
+
+void TitleBar::createButtonIcon(){
+    iconButton.setObjectName("icon");
+    iconButton.setIcon(QIcon("imagens/icons/icon_white.ico"));
+    iconButton.setParent(this);
+    iconButton.setIconSize(QSize(17, 17));
+    iconButton.setGeometry(0, 0, 40, 40);
+    window->connect(&iconButton, &QPushButton::clicked, [this](){
+        
+    });
+    iconButton.show();
 }
 
 void TitleBar::createButtonExit(){
@@ -71,6 +87,16 @@ TitleBar* TitleBar::createTitleBarCustomized(QWidget* parent, bool minimize, boo
     if (exit) { titleBar->createButtonExit(); }
     if(minimize) { titleBar->createButtonMinimize(); }
     if(resize) { titleBar->createButtonResize(); }
-    if (icon) { }//titleBar->createButtonIcon(); }
+    if (icon) { titleBar->createButtonIcon(); }
     return titleBar;
+}
+
+void TitleBar::resized(){
+    setGeometry(0, 0, window->width(), 30);
+    
+    themaButton.setGeometry(width()/2 - 5, 0, height(), height());
+    minimizeButton.setGeometry(width() - ((!changeResize)? 2*height() : 3*height()), 0, height(), height());
+    exitButton.setGeometry(width() - height(), 0, height(), height());
+    resizeButton.setGeometry(width() - 2*height(), 0, height(), height());
+    iconButton.setGeometry(0, 0, 40, 40);
 }

@@ -8,7 +8,7 @@
 
 Login::Login() : State(nullptr){
     resize(400, 300);
-    titleBar = TitleBar::createTitleBarCustomized(this, true, false, true, true, false, true);
+    titleBar = TitleBar::createTitleBarCustomized(this, true, false, false, true, false, true);
     
     createLoginButton();
     createRegisterButton();

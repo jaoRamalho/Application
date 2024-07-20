@@ -24,7 +24,6 @@ QLineEdit {
     border : 1px solid #646363;
 }
 
-
 #TitleBar {
     background-color: #646363;
 }
@@ -39,7 +38,38 @@ QLineEdit {
     background-color: #33385a;
 }
 
+
 #Error {
-    background-color: #646363;
-    color: #ff0000;
+    background-color: #bd3535;
+    color: #ffffff;
+}
+
+#Error QPushButton {
+    background-color: #bd3535;
+    color: #ffffff;
+    border: none;
+}
+
+#Error QPushButton:hover {
+    background-color: #641717;
+    color: #FFFFFF;
+}
+
+#Error QLabel {
+    color: #ffffff;
+    background-color: #bd3535;
+}
+
+#Icon-bar {
+    background-color: #000000;
+    color: #FFFFFF;
+    border: none;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+#Icon-bar :hover {
+    background-color: #000000;
+    color: #FFFFFF;
+    border: none;
 }

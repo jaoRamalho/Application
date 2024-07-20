@@ -9,9 +9,12 @@ private:
     QLabel welcomeLabel;
     QPushButton settingsButton;
 
-    void createWelcomeLabel();
     void createSettingsButton();
+    void createLayoutHome();
+    void createCentralWidgetHome();
+    void createTitleBarHome();
     void createWindowHome();
+    
 
 public:
     Home(QWidget* parent, std::string username);

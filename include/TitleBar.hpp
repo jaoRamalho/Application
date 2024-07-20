@@ -2,6 +2,7 @@
 #include <QWidget>
 #include <QPushButton>
 #include <QResizeEvent>
+#include <QPoint>
 
 // classe para representar a barra de titulo de states
 class TitleBar : public QWidget{
@@ -11,8 +12,15 @@ private:
     QPushButton resizeButton;
     QPushButton themaButton;
     QPushButton iconButton;
-    
+
+
+    QPoint dragPosition;
+    bool dragging;
+
+
     bool changeResize;
+    bool moved;
+
     QWidget* window;
 
 
@@ -27,7 +35,9 @@ private:
 
 
 public:
-    static TitleBar* createTitleBarCustomized(QWidget* parent, bool minimize, bool resize, bool thema, bool exit, bool title, bool icon);
+    static TitleBar* createTitleBarCustomized(QWidget* parent, bool minimize, bool resize, bool thema, bool exit, bool title, bool icon, bool moved);
 
     void resized();
+    void mousePressEvent(QMouseEvent* event);
+    void mouseMoveEvent(QMouseEvent* event);
 };

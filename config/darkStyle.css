@@ -63,8 +63,7 @@ QLineEdit {
     background-color: #bd3535;
 }
 
-
-#icon{
+QPushButton#Icon-bar {
     background-color: #000000;
     color: #FFFFFF;
     border: none;
@@ -72,8 +71,8 @@ QLineEdit {
     padding-bottom: 10px;
 }
 
-#icon:hover {
-    background-color: #000000; /* Mantém a cor de fundo original */
-    color: #FFFFFF; /* Mantém a cor do texto original */
-    border: none;
+QPushButton#Icon-bar:hover {
+    background-color: #000000 !important; 
+    color: #FFFFFF !important; 
+    border: none !important;
 }

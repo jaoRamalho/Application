@@ -1,10 +1,10 @@
 #pragma once
-#include <QWidget>
+#include <QMainWindow>
 #include <QLineEdit>
 #include "TitleBar.hpp"
 
 // classe para representar o states da aplicacao (telas principais com contorno eobjetos)
-class State : public QWidget{
+class State : public QMainWindow{
 protected:
     TitleBar* titleBar;
 

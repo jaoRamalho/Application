@@ -1,11 +1,12 @@
 #include "TitleBar.hpp"
 #include "Application.hpp"
 #include <iostream>
+#include <QMouseEvent>
+#include <QApplication>
 
-TitleBar::TitleBar(QWidget* parent) : QWidget(parent), window(parent), changeResize(false){
+TitleBar::TitleBar(QWidget* parent) : QWidget(parent), window(parent), changeResize(false), dragging(false){
     
     this->setObjectName("TitleBar");
-    
     //setando a flag para a janela nao ter borda
     parent->setWindowFlags(Qt::FramelessWindowHint);
     
@@ -17,6 +18,21 @@ void TitleBar::createTitleBar(){
     setGeometry(0, 0, window->width(), 30);
 }
 
+
+void TitleBar::mousePressEvent(QMouseEvent* event){
+    if(moved && event->button() == Qt::LeftButton){
+        dragging = true;
+        dragPosition = event->globalPosition().toPoint() - window->frameGeometry().topLeft();
+        event->accept();
+    }
+}
+
+void TitleBar::mouseMoveEvent(QMouseEvent* event){
+    if(moved && dragging && (window->windowState() != Qt::WindowMaximized)){
+        window->move(event->globalPosition().toPoint() - dragPosition);
+        event->accept();
+    }
+}
 
 void TitleBar::createButtonResize(){
     resizeButton.setText("[]");
@@ -46,8 +62,8 @@ void TitleBar::createButtonThema(){
 }
 
 void TitleBar::createButtonIcon(){
-    iconButton.setObjectName("icon");
     iconButton.setIcon(QIcon("imagens/icons/icon_white.ico"));
+    iconButton.setObjectName("Icon-bar");
     iconButton.setParent(this);
     iconButton.setIconSize(QSize(17, 17));
     iconButton.setGeometry(0, 0, 40, 40);
@@ -78,11 +94,12 @@ void TitleBar::createButtonMinimize(){
 }
 
 TitleBar* TitleBar::createTitleBarCustomized(QWidget* parent, bool minimize, bool resize, bool thema, bool exit, 
-                                    bool title, bool icon)
+                                    bool title, bool icon, bool moved)
 {
     TitleBar* titleBar = new TitleBar(parent);
     titleBar-> setGeometry(0, 0, parent->width(), 30);
     titleBar->changeResize = resize;
+    titleBar->moved = moved;
     if (thema) { titleBar->createButtonThema(); }
     if (exit) { titleBar->createButtonExit(); }
     if(minimize) { titleBar->createButtonMinimize(); }

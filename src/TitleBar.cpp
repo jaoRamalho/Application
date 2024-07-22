@@ -3,6 +3,7 @@
 #include <iostream>
 #include <QMouseEvent>
 #include <QApplication>
+#include "LinkManager.hpp"
 
 TitleBar::TitleBar(QWidget* parent) : QWidget(parent), window(parent), changeResize(false), dragging(false){
     
@@ -12,10 +13,12 @@ TitleBar::TitleBar(QWidget* parent) : QWidget(parent), window(parent), changeRes
     
     //setando a flag para o qwidget ser deletado ao fechar
     this->setAttribute(Qt::WA_DeleteOnClose);
+
+    this->createTitleBar();
 }
 
 void TitleBar::createTitleBar(){
-    setGeometry(0, 0, window->width(), 30);
+    setGeometry(0, 0, window->width(), 40);
 }
 
 
@@ -35,7 +38,8 @@ void TitleBar::mouseMoveEvent(QMouseEvent* event){
 }
 
 void TitleBar::createButtonResize(){
-    resizeButton.setText("[]");
+    LinkManager links;
+    resizeButton.setIcon(QIcon(links.getLink("icon-square-white")));
     resizeButton.setParent(this);
     resizeButton.setGeometry(width() - 2*height(), 0, height(), height());
     window->connect(&resizeButton, &QPushButton::clicked, [this](){
@@ -51,7 +55,8 @@ void TitleBar::createButtonResize(){
 }
 
 void TitleBar::createButtonThema(){
-    themaButton.setText("T");
+    LinkManager links;
+    themaButton.setIcon(QIcon(links.getLink("icon-thema-white")));
     themaButton.setParent(this);
     themaButton.setGeometry(width()/2 - 5, 0, height(), height());
     window->connect(&themaButton, &QPushButton::clicked, [this](){
@@ -62,11 +67,10 @@ void TitleBar::createButtonThema(){
 }
 
 void TitleBar::createButtonIcon(){
-    iconButton.setIcon(QIcon("imagens/icons/icon_white.ico"));
     iconButton.setObjectName("Icon-bar");
     iconButton.setParent(this);
-    iconButton.setIconSize(QSize(17, 17));
-    iconButton.setGeometry(0, 0, 40, 40);
+    iconButton.setGeometry(0, 0, height(), height());
+    iconButton.setIcon(QIcon("imagens/icons/moon-white.ico"));
     window->connect(&iconButton, &QPushButton::clicked, [this](){
         
     });
@@ -74,7 +78,8 @@ void TitleBar::createButtonIcon(){
 }
 
 void TitleBar::createButtonExit(){
-    exitButton.setText("X");
+    LinkManager links;
+    exitButton.setIcon(QIcon(links.getLink("icon-x-white")));
     exitButton.setParent(this);
     exitButton.setGeometry(width() - height(), 0, height(), height());
     window->connect(&exitButton, &QPushButton::clicked, [this](){
@@ -84,7 +89,8 @@ void TitleBar::createButtonExit(){
 }
 
 void TitleBar::createButtonMinimize(){
-    minimizeButton.setText("=");
+    LinkManager links;
+    minimizeButton.setIcon(QIcon(links.getLink("icon-minimize-white")));
     minimizeButton.setParent(this);
     minimizeButton.setGeometry(width() - ((!changeResize)? 2*height() : 3*height()), 0, height(), height());
     window->connect(&minimizeButton, &QPushButton::clicked, [this](){
@@ -97,7 +103,6 @@ TitleBar* TitleBar::createTitleBarCustomized(QWidget* parent, bool minimize, boo
                                     bool title, bool icon, bool moved)
 {
     TitleBar* titleBar = new TitleBar(parent);
-    titleBar-> setGeometry(0, 0, parent->width(), 30);
     titleBar->changeResize = resize;
     titleBar->moved = moved;
     if (thema) { titleBar->createButtonThema(); }
@@ -109,11 +114,11 @@ TitleBar* TitleBar::createTitleBarCustomized(QWidget* parent, bool minimize, boo
 }
 
 void TitleBar::resized(){
-    setGeometry(0, 0, window->width(), 30);
+    createTitleBar();
     
     themaButton.setGeometry(width()/2 - 5, 0, height(), height());
     minimizeButton.setGeometry(width() - ((!changeResize)? 2*height() : 3*height()), 0, height(), height());
     exitButton.setGeometry(width() - height(), 0, height(), height());
     resizeButton.setGeometry(width() - 2*height(), 0, height(), height());
-    iconButton.setGeometry(0, 0, 40, 40);
+    iconButton.setGeometry(0, 0, height(), height());
 }

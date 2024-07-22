@@ -13,6 +13,9 @@ OBJ_FILES := $(patsubst src/%.cpp,$(OBJ_DIR)/%.o,$(CPP_FILES))
 # Compilação dos arquivos .cpp para arquivos .o
 $(OBJ_DIR)/%.o: src/%.cpp
 	g++ -c $< -o $@ -Iinclude \
+	-Iinclude/States \
+	-Iinclude/States/Home \
+	-Iinclude/States/Login \
 	-Iinclude/nlohmann \
 	-IQt/include \
 	-IQt/include/QtCore \

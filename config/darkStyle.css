@@ -29,7 +29,7 @@ QLineEdit {
 }
 
 #TitleBar QPushButton {
-    background-color: #000000;
+    background-color: transparent;
     color: #FFFFFF;
     border: none;
     text-align: center;
@@ -63,16 +63,25 @@ QLineEdit {
     background-color: #bd3535;
 }
 
-QPushButton#Icon-bar {
-    background-color: #000000;
+QPushButton#Icon-bar:hover {
+    background-color: transparent !important; 
+    color: #FFFFFF !important; 
+    border: none !important;
+}
+
+#Menu-Bar {
+    background-color: #363636;
+    color: #FFFFFF;
+    border-right: 1px solid #000000;
+}
+
+#Menu-Bar QPushButton {
+    background-color: transparent;
     color: #FFFFFF;
     border: none;
     text-align: center;
-    padding-bottom: 10px;
 }
 
-QPushButton#Icon-bar:hover {
-    background-color: #000000 !important; 
-    color: #FFFFFF !important; 
-    border: none !important;
+#Menu-Bar QPushButton:hover {
+    border-left: 2.5px solid #cc0b0b;
 }

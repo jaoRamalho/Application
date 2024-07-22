@@ -17,6 +17,18 @@
             "password": "000",
             "role": "user",
             "username": "jj"
+        },
+        {
+            "name": "Natan da Rocha Ramalho",
+            "password": "natan97531",
+            "role": "user",
+            "username": "natanrochz"
+        },
+        {
+            "name": "natan a rocha",
+            "password": "natan97531",
+            "role": "user",
+            "username": "rochz"
         }
     ]
 }

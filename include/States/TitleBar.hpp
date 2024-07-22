@@ -3,6 +3,7 @@
 #include <QPushButton>
 #include <QResizeEvent>
 #include <QPoint>
+#include <QIcon>
 
 // classe para representar a barra de titulo de states
 class TitleBar : public QWidget{

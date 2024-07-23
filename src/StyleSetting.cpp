@@ -1,6 +1,7 @@
 #include "StyleSetting.hpp"
 #include <iostream>
 
+
 StyleSetting::StyleSetting() : thema("dark"){
     styleMap["default"] = "config/darkStyle.css";
     styleMap["light"] = "config/lightStyle.css";

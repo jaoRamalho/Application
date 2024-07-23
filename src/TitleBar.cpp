@@ -39,7 +39,7 @@ void TitleBar::mouseMoveEvent(QMouseEvent* event){
 
 void TitleBar::createButtonResize(){
     LinkManager links;
-    resizeButton.setIcon(QIcon(links.getLink("icon-square-white")));
+    resizeButton.setIcon(QIcon(links.getLink("icon-square")));
     resizeButton.setParent(this);
     resizeButton.setGeometry(width() - 2*height(), 0, height(), height());
     window->connect(&resizeButton, &QPushButton::clicked, [this](){
@@ -56,7 +56,7 @@ void TitleBar::createButtonResize(){
 
 void TitleBar::createButtonThema(){
     LinkManager links;
-    themaButton.setIcon(QIcon(links.getLink("icon-thema-white")));
+    themaButton.setIcon(QIcon(links.getLink("icon-thema")));
     themaButton.setParent(this);
     themaButton.setGeometry(width()/2 - 5, 0, height(), height());
     window->connect(&themaButton, &QPushButton::clicked, [this](){
@@ -70,7 +70,7 @@ void TitleBar::createButtonIcon(){
     iconButton.setObjectName("Icon-bar");
     iconButton.setParent(this);
     iconButton.setGeometry(0, 0, height(), height());
-    iconButton.setIcon(QIcon("imagens/icons/moon-white.ico"));
+    iconButton.setIcon(QIcon("imagens/icons/moon.ico"));
     window->connect(&iconButton, &QPushButton::clicked, [this](){
         
     });
@@ -79,7 +79,7 @@ void TitleBar::createButtonIcon(){
 
 void TitleBar::createButtonExit(){
     LinkManager links;
-    exitButton.setIcon(QIcon(links.getLink("icon-x-white")));
+    exitButton.setIcon(QIcon(links.getLink("icon-x")));
     exitButton.setParent(this);
     exitButton.setGeometry(width() - height(), 0, height(), height());
     window->connect(&exitButton, &QPushButton::clicked, [this](){
@@ -90,7 +90,7 @@ void TitleBar::createButtonExit(){
 
 void TitleBar::createButtonMinimize(){
     LinkManager links;
-    minimizeButton.setIcon(QIcon(links.getLink("icon-minimize-white")));
+    minimizeButton.setIcon(QIcon(links.getLink("icon-minimize")));
     minimizeButton.setParent(this);
     minimizeButton.setGeometry(width() - ((!changeResize)? 2*height() : 3*height()), 0, height(), height());
     window->connect(&minimizeButton, &QPushButton::clicked, [this](){

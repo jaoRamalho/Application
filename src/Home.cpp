@@ -1,11 +1,13 @@
 #include "Home.hpp"
 #include <iostream>
+#include "NewsAPI.hpp"
 
 
 Home::Home(QWidget* parent, std::string username) : State(parent){
     this->username = username;
     createWindowHome();
-    
+    NewsAPI newa;
+    nlohmann::json news = newa.getNews("br", {"business", "technology"});
 }
 
 void Home::createLayoutHome(){

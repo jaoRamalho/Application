@@ -83,5 +83,9 @@ QPushButton#Icon-bar:hover {
 }
 
 #Menu-Bar QPushButton:hover {
-    border-left: 2.5px solid #cc0b0b;
+    background-color:#e90202;
+}
+
+#Menu-Bar QPushButton:checked {
+    border-left: 2.5px solid #e90202;
 }

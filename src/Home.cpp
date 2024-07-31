@@ -6,8 +6,9 @@
 Home::Home(QWidget* parent, std::string username) : State(parent){
     this->username = username;
     createWindowHome();
-    NewsAPI newa;
-    nlohmann::json news = newa.getNews("br", {"business", "technology"});
+
+
+  //nlohmann::json news = NewsAPI::getNews("br", {"business", "technology", "Bitcoin", "Apple"});
 }
 
 void Home::createLayoutHome(){

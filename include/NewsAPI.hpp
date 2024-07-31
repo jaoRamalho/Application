@@ -8,14 +8,16 @@ using namespace std;
 
 class NewsAPI{
 private:
-    string path_code_python;
+    static string path_code_python;
 
+
+    static std::string request(const char* cmd);
 public:
     NewsAPI();
     ~NewsAPI();
 
-    nlohmann::json getNews(string country, vector<string> category);
-    nlohmann::json getNews(string country, vector<string> category, string dataInicial, string dataFinal);
+    static nlohmann::json getNews(string country, vector<string> category);
+    static nlohmann::json getNews(string country, vector<string> category, string dataInicial, string dataFinal);
 
 
 };
